@@ -5,17 +5,23 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { MainNavComponent } from './main-nav/main-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
-import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
+import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatCardModule, MatChipsModule } from '@angular/material';
+import { ReposComponent } from './repos/repos.component';
+import { ProjectsComponent } from './projects/projects.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MainNavComponent
+    MainNavComponent,
+    ReposComponent,
+    ProjectsComponent
   ],
   imports: [
     BrowserAnimationsModule,
     BrowserModule,
     LayoutModule,
+    MatCardModule,
+    MatChipsModule,
     MatToolbarModule,
     MatButtonModule,
     MatSidenavModule,
@@ -23,6 +29,7 @@ import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, Mat
     MatListModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [ReposComponent, ProjectsComponent]
 })
 export class AppModule { }
