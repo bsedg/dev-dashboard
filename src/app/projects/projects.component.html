@@ -1,20 +1,31 @@
-<div class="project">
+<mat-accordion class="example-headers-align"> 
   <div *ngFor="let project of projects">
-      <mat-card class="repo-card">
-        <mat-card-header>
-          <mat-card-title>{{project.name}}</mat-card-title>
-          <mat-card-subtitle>{{project.objectId}}</mat-card-subtitle>
-        </mat-card-header>
-        <mat-card-content>
-          <a href="{{project.url}}">src:{{project.name}}</a>
-        </mat-card-content>
-        <mat-chip-list>
-            <mat-chip color="accent" >master</mat-chip>
-            <mat-chip color="primary" selected>develop</mat-chip>
-          </mat-chip-list>
-          <mat-card-actions>
-              <button mat-button>Get Repos</button>
-            </mat-card-actions>
-      </mat-card>
+      <mat-expansion-panel [expanded]="false">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            {{project.name}}
+          </mat-panel-title>
+          <mat-panel-description>
+            {{project.description}}
+            <mat-icon>layers</mat-icon>
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+
+        <mat-list>
+          <div *ngFor="let pr of prs">
+            <mat-list-item>{{pr.title}} 
+                <mat-chip-list>
+                    <mat-chip color="primary">{{pr.status}}</mat-chip>
+                    <mat-chip>{{pr.repository.name}}</mat-chip>
+                  </mat-chip-list>                  
+            </mat-list-item>
+          </div>
+        </mat-list>
+           
+        <mat-action-row>
+          <button mat-button color="warn">Previous</button>
+          <button mat-button color="primary">Next</button>
+        </mat-action-row>
+      </mat-expansion-panel>
     </div>
-</div>
+</mat-accordion>

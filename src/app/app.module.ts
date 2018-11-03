@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MainNavComponent } from './main-nav/main-nav.component';
 import {
+  MatExpansionModule,
   MatButtonModule,
   MatCardModule,
   MatChipsModule,
@@ -26,6 +27,7 @@ import { ProjectsComponent } from './projects/projects.component';
     BrowserAnimationsModule,
     BrowserModule,
     LayoutModule,
+    MatExpansionModule,
     MatCardModule,
     MatChipsModule,
     MatToolbarModule,

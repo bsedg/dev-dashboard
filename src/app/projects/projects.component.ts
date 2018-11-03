@@ -18,6 +18,7 @@ export class ProjectsComponent implements OnInit {
 
   ngOnInit() {
     this.getProjects();
+    this.getPullRequests("");
   }
 
   getProjects(): void {
