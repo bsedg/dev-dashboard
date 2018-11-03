@@ -5,7 +5,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { MainNavComponent } from './main-nav/main-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
-import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatCardModule, MatChipsModule } from '@angular/material';
+import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatCardModule, MatChipsModule, MatExpansionModule, MatFormFieldModule } from '@angular/material';
 import { ReposComponent } from './repos/repos.component';
 import { ProjectsComponent } from './projects/projects.component';
 
@@ -22,6 +22,8 @@ import { ProjectsComponent } from './projects/projects.component';
     LayoutModule,
     MatCardModule,
     MatChipsModule,
+    MatExpansionModule,
+    MatFormFieldModule,
     MatToolbarModule,
     MatButtonModule,
     MatSidenavModule,
