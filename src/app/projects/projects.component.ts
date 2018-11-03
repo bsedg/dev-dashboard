@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Project } from '../models/projects.model';
-import { ReposService } from '../repos.service';
+import { PullRequestsService } from '../pull-requests.service';
+import { PullRequest } from '../pull-requests.model';
 
 @Component({
   selector: 'app-projects',
@@ -11,15 +12,21 @@ import { ReposService } from '../repos.service';
 export class ProjectsComponent implements OnInit {
 
   projects: Project[];
+  prs: PullRequest[];
 
-  constructor(private reposService: ReposService) { }
+  constructor(private pullRequestsService: PullRequestsService) { }
 
   ngOnInit() {
     this.getProjects();
   }
 
   getProjects(): void {
-    this.reposService.getProjects()
+    this.pullRequestsService.getProjects()
       .subscribe(projects => this.projects = projects);
+  }
+
+  getPullRequests(projectId): void {
+    this.pullRequestsService.getPullRequestsByProject(projectId)
+      .subscribe(prs => this.prs = prs)
   }
 }

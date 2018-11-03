@@ -1,19 +1,25 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
 import { AppComponent } from './app.component';
-import { MainNavComponent } from './main-nav/main-nav.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserModule } from '@angular/platform-browser';
 import { LayoutModule } from '@angular/cdk/layout';
-import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatCardModule, MatChipsModule } from '@angular/material';
-import { ReposComponent } from './repos/repos.component';
+import { MainNavComponent } from './main-nav/main-nav.component';
+import {
+  MatButtonModule,
+  MatCardModule,
+  MatChipsModule,
+  MatIconModule,
+  MatListModule,
+  MatSidenavModule,
+  MatToolbarModule
+  } from '@angular/material';
+import { NgModule } from '@angular/core';
 import { ProjectsComponent } from './projects/projects.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     MainNavComponent,
-    ReposComponent,
     ProjectsComponent
   ],
   imports: [
@@ -30,6 +36,6 @@ import { ProjectsComponent } from './projects/projects.component';
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents: [ReposComponent, ProjectsComponent]
+  entryComponents: [ProjectsComponent]
 })
 export class AppModule { }
